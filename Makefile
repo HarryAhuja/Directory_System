@@ -5,12 +5,16 @@ CFLAGS  = -g
 LFLAGS  = -lm
 target  = directory
 
+# Find all source files
 SOURCES := $(notdir $(shell find . -name "*.c"))
+
+#Convert from .c to .o
 OBJECTS := $(SOURCES:.c=.o)
 OBJECTS := $(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all: obj_dir $(target)
 
+#Include All Headers folders
 HEADERS := $(sort $(dir $(shell find -L . -name "*.h")))
 INCLUDE := $(patsubst %,-I%,$(HEADERS))
 
@@ -22,6 +26,7 @@ DIRS := $(addsuffix $(OBJDIR)/,$(DIRS))
 DEPS := DEP = $(OBJECTS:%.o=%.d)
 -include $(DEPS)
 
+#Generate all dependencies files
 DEPFLAG = -MMD -MF $(@:.o=.d)
 
 $(target): $(OBJECTS)

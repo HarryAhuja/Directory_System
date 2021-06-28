@@ -41,7 +41,7 @@ int mem_compare(char a[], char b[])
 int hash_fun(char name[])
 {
     int h = 5381;
-    int c;
+    int c = 0;
 
     while(c = *name++)
     {
@@ -88,18 +88,18 @@ dir_node* find_desired_node(char path[])
             h = (h%PRIME_NUMBER);
 
             int count = find_index(temp,h,name);
-            temp = &dir_node_pool[temp->children[count]];
+            temp      = &dir_node_pool[temp->children[count]];
 
-            h= 5381;
-            c=0;
-            j=0;
+            h = 5381;
+            c = 0;
+            j = 0;
             i++;
             continue;
         }
 
         name[j] = path[i];
-        c = name[j];
-        h = (((h<<5)+h) + c) % PRIME_NUMBER;
+        c       = name[j];
+        h       = (((h<<5)+h) + c) % PRIME_NUMBER;
         j++;
         i++;
     }
@@ -146,7 +146,7 @@ void traverse_children(dir_node *src, dir_node *dst)
 
     mem_copy(new_dir->name,src->name);
 
-    new_dir->hash = src->hash;
+    new_dir->hash   = src->hash;
     new_dir->parent = src->parent;
 
     dst->children[dst->child_count] = dir_node_pool_count;
@@ -167,43 +167,43 @@ void traverse_children(dir_node *src, dir_node *dst)
 void init(int n)
 {    
     int i,j;
-    if(once==false)
+    if(once == false)
     {
         for(i=0;i<NODE_POOL_SIZE;i++)
         {
-            dir_node_pool[i].index = i;
+            dir_node_pool[i].index       = i;
             dir_node_pool[i].child_count = 0;
             for(j=0;j<30;j++)
             {
                 dir_node_pool[i].children[j] = -1;
             }
 
-            dir_node_pool[i].name[0] = '\0';
+            dir_node_pool[i].name[0]   = '\0';
             dir_node_pool[i].dir_count = 0;
-            dir_node_pool[i].parent = -1;
-            dir_node_pool[i].hash = 0;
+            dir_node_pool[i].parent    = -1;
+            dir_node_pool[i].hash      = 0;
         }
-        once= true;
+        once = true;
     }
     else
     {
         for(i=0;i<n;i++)
         {
-            dir_node_pool[i].index = i;
+            dir_node_pool[i].index       = i;
             dir_node_pool[i].child_count = 0;
             for(j=0;j<30;j++)
             {
                 dir_node_pool[i].children[j] = -1;
             }
 
-            dir_node_pool[i].name[0] = '\0';
-            dir_node_pool[i].dir_count = 0;
-            dir_node_pool[i].parent = -1;
-            dir_node_pool[i].hash = 0;
+            dir_node_pool[i].name[0]     = '\0';
+            dir_node_pool[i].dir_count   = 0;
+            dir_node_pool[i].parent      = -1;
+            dir_node_pool[i].hash        = 0;
         }
     }
 
-    dir_node_pool_count = 0;
+    dir_node_pool_count      = 0;
     dir_node_pool[0].name[0] = '/';
     dir_node_pool[0].name[1] = '\0';
 
@@ -235,9 +235,9 @@ void cmd_mkdir(char path[PATH_MAX_LEN+1], char name[NAME_MAX_LEN+1])
     h = (h%PRIME_NUMBER);
 
     new_dir->name[x] = '\0';
-    new_dir->hash = h;
+    new_dir->hash    = h;
 
-    new_dir->parent = parent->index;
+    new_dir->parent  = parent->index;
 
     parent->children[parent->child_count] = dir_node_pool_count;
     parent->child_count++;
