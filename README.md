@@ -75,5 +75,6 @@ There are various features related to a directory but following 5 features are i
 * cd Directory_System/
 * make clean
 * make -j
-* ./directory.exe
+* ./directory.exe  -->(directory is the name of executable)
 * Output of the program should be "#Test Case:1 Passed"
+* All Object files will be stored in Directory_System/output/ folder
