@@ -1,16 +1,7 @@
 #ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 
-#include<stdio.h>
-
-#define CONS_OUT    printf
-#define bool        int
-#define true        1
-#define false       0
-
-#define NAME_MAX_LEN    6
-#define PATH_MAX_LEN    1999
-
+#include"define.h"
 
 typedef enum CMD
 {

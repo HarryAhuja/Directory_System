@@ -1,11 +1,4 @@
-#define NAME_MAX_LEN    6
-#define PATH_MAX_LEN    1999
-#define NODE_POOL_SIZE  50001
-#define PRIME_NUMBER    65537
-#define bool        int
-#define NULL        0
-#define true        1
-#define false       0
+#include"define.h"
 
 typedef struct DIRECTORY_NODE
 {
