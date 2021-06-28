@@ -1,10 +1,11 @@
 OBJDIR  = output
+SRC     = src
 CC      = gcc
 CFLAGS  = -g
 LFLAGS  = -lm
 target  = directory
 
-SOURCES := $(shell find . -name "*.c")
+SOURCES := $(notdir $(shell find . -name "*.c"))
 OBJECTS := $(SOURCES:.c=.o)
 OBJECTS := $(addprefix $(OBJDIR)/,$(OBJECTS))
 
@@ -16,7 +17,7 @@ DIRS := $(addsuffix $(OBJDIR)/,$(DIRS))
 $(target): $(OBJECTS)
 	$(CC) -o $@ $^ $(LFLAGS)
 
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 obj_dir:
@@ -25,3 +26,7 @@ obj_dir:
 clean:
 	rm -rf $(OBJDIR)
 	rm -rf $(target)
+
+show:
+	@echo  $(SOURCES)
+	@echo  $(OBJECTS)
