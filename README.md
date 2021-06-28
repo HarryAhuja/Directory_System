@@ -69,3 +69,11 @@ There are various features related to a directory but following 5 features are i
 * The route of every directory is not longer than 1999
 * No directories under same parent have same name
 * Only upto 30 directories can have same parent directory
+
+## How to Compile and Run Project ##
+* git clone https://github.com/HarryAhuja/Directory_System.git
+* cd Directory_System/
+* make clean
+* make -j
+* ./directory.exe
+* Output of the program should be "#Test Case:1 Passed"
