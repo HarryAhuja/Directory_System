@@ -94,7 +94,7 @@ int main()
     int test_case, T;
     int n, m;
 
-    freopen("test_cases_input.txt","r",stdin);
+    freopen("./input/test_cases_input.txt","r",stdin);
 
     setbuf(stdout,NULL);
 
