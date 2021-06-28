@@ -69,6 +69,8 @@ There are various features related to a directory but following 5 features are i
 * The route of every directory is not longer than 1999
 * No directories under same parent have same name
 * Only upto 30 directories can have same parent directory
+<br/>
+<br/>
 
 ## How to Compile and Run Project ##
 * git clone https://github.com/HarryAhuja/Directory_System.git
@@ -78,3 +80,19 @@ There are various features related to a directory but following 5 features are i
 * ./directory.exe  -->(directory is the name of executable)
 * Output of the program should be "#Test Case:1 Passed"
 * All Object files will be stored in Directory_System/output/ folder
+<br/>
+<br/>
+
+## Input ##
+* Input test file is in ./input/ folder
+* Input is given according to following functions index
+* 1: CMD_MKDIR
+* 2: CMD_RM
+* 3: CMD_CP
+* 4: CMD_MV
+* 5: CMD_FIND
+<br/>
+<br/>
+
+## Output ##
+* #Test Case Number : Passed/Failed
