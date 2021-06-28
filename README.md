@@ -5,7 +5,7 @@ A directory contains multiple files and other directories and it provides user w
 
 A directory uses "/" as a separator character and shows its route within the file system.
 "/" may represent a root directory or a hierarchical relationship between parent directories and subdirectories.
-For instance, "/aa/bb" indicates that under the root directory, there is the "aa" director, beneath which lies the "bb" directory.
+For instance, "/aa/bb" indicates that under the root directory, there is the "aa" directory, beneath which lies the "bb" directory.
 
 There are various features related to a directory but following 5 features are implemented in this project
 - Create a directory
@@ -21,3 +21,51 @@ There are various features related to a directory but following 5 features are i
 <img src="images/copy.PNG" height="120"    width="350">
 <img src="images/move.PNG" height="120"    width="350">
 <img src="images/find.PNG" height="120"    width="350">
+
+
+
+<br/>
+<br/>
+  
+  
+#### Look at the table below in which functions are called in following order ####
+<img src="images/table.PNG" height="300">
+<br/>
+<br/>
+
+#### When functions #1 to #4 are called, the directory structure will be like this [Fig. 1] ####
+<img src="images/fig1.PNG" height="300">
+<br/>
+<br/>
+
+
+#### When function #5 is called, the directory structure will be like this [Fig. 2] ####
+<img src="images/fig2.PNG" height="300">
+<br/>
+<br/>
+
+
+#### When function #6 is called, the directory structure will be like this [Fig. 3] ####
+<img src="images/fig3.PNG" height="300">
+<br/>
+<br/>
+
+
+#### When function #7 is called, the directory structure will be like this [Fig. 4] ####
+<img src="images/fig4.PNG" height="300">
+<br/>
+<br/>
+
+
+#### When function #9 is called, the directory structure will be like this [Fig. 5] ####
+<img src="images/fig5.PNG" height="300">
+<br/>
+<br/>
+
+
+## Constraints ##
+* Maximum directories that can be made is 50,000
+* The directory name is made of small letters and its length is >=2 and <=6
+* The route of every directory is not longer than 1999
+* No directories under same parent have same name
+* Only upto 30 directories can have same parent directory
