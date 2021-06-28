@@ -1,5 +1,4 @@
 #include"define.h"
-
 typedef struct DIRECTORY_NODE
 {
     char name[7];

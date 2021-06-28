@@ -1,8 +1,4 @@
-#ifndef _CRT_SECURE_NO_WARNINGS
-#define _CRT_SECURE_NO_WARNINGS
-
 #include"define.h"
-
 typedef enum CMD
 {
     CMD_MKDIR  = 1,  //1
@@ -109,5 +105,3 @@ int main()
 
     return 0;
 }
-
-#endif
