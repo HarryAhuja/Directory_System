@@ -1,0 +1,8 @@
+# Ignore object and header dependecies files
+output/
+
+# Ignore executable output of project
+directory.exe
+
+# Include Excel file
+diagrams.xlsx
