@@ -127,7 +127,7 @@ void delete_child_from_parent(int parent, char name[])
     int h = hash_fun(name);
 
     int c,x;
-    c = findIndex(&dir_node_pool[parent],h,name);
+    c = find_index(&dir_node_pool[parent],h,name);
 
     for(x=c; x<dir_node_pool[parent].child_count-1; x++)
     {
@@ -183,7 +183,7 @@ void init(int n)
             dir_node_pool[i].child_count = 0;
             for(j=0;j<30;j++)
             {
-                dir_node_pool[i].children[c] = -1;
+                dir_node_pool[i].children[j] = -1;
             }
 
             dir_node_pool[i].name[0] = '\0';
@@ -201,7 +201,7 @@ void init(int n)
             dir_node_pool[i].child_count = 0;
             for(j=0;j<30;j++)
             {
-                dir_node_pool[i].children[c] = -1;
+                dir_node_pool[i].children[j] = -1;
             }
 
             dir_node_pool[i].name[0] = '\0';
